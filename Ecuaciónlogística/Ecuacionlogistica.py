@@ -16,7 +16,7 @@ from functools import cache
 import plotly.figure_factory as ff
 import plotly.express as px
 from collections import Counter
-import numpy as np
+
 
 @cache #Guárdará los datos para intentar acelarar el proceso (es un decorador)
 def logistic (R, x0, N):
