@@ -73,13 +73,14 @@ showstringspaces=false
 	x_{t+1} =  r\cdot x_{t}(1 - x_t), \text{ donde } 0 \leq x_0 \leq 1 
 	\end{align*}
 
+
 	Donde 
 
 \section{Creación de una base de datos}
 
 	\subsection{Extracción de datos.}
 
-		Para extraer los distintos datos de los distintos índices económicos se empleó la API de YahooFinance, conocida como Yfinance. Se tomó esta decisión porque la mayoría de las API's con las mismas funciones eran de paga, y, por otro lado, era más fácil obtener los datos de esta manera que extrayendo los datos de forma directa aplicando técnicas de Web Scrapping. \\
+		Para extraer los datos de los distintos índices económicos se empleó la API de YahooFinance, conocida como Yfinance. Se tomó esta decisión porque la mayoría de las API's con las mismas funciones eran de paga, y, por otro lado, era más fácil obtener los datos de esta manera que extrayendo los datos de forma directa aplicando técnicas de Web Scrapping. \\
 		
 		El uso de Yfinance es bastante simple, aún así creo esclarecedor una breve explicación de su funcionamiento. Yfinance se basa en un sistema de Tickets que son la forma de comunicarnos con el sitio Web de Yahoo Finance. Para emplear los tickets necesitamos de la clave con la que están designados los índices económicos, la cual puede ser consultada desde la página de YahooFinance. Por ejemplo, la clave del IPC MEXICO es "\^{}MXX". \\
 		
@@ -110,44 +111,48 @@ from datetime import date, timedelta, datetime
 import time
 	\end{python}
 		
-	La librería \pythoninline{pathlib} sirve
+	El módulo \pythoninline{pathlib} nos permite manipular las rutas de los archivos del sistema, de forma muy similar a \pythoninline{os.path}, pero con la diferencia de \pythoninline{pathlib} lo puede lograr a alto nivel y que su interface es mucho más conveniente. Por otro lado, los módulos \pythoninline{datetime} y \pythoninline{time} nos permite trabajar con fechas y tiempos, para ello emplea una clase conocida como datetime. \\
 	
-	La siguiente parte del código consiste en la enumeración de los tickets de los distintos índices económicos de los que queremos extraer la información.
+	La siguiente parte del código consiste en la enumeración de los tickets de los distintos índices económicos de los que queremos extraer la información. Como explicamos antes, para poder usar los tickets necesitamos el TAG de los ínidces económicos que aparecen en la página de YahooFinance. Así, por ejemplo, tenemos que el TAG del NASDAQ es "\^{}NDX"   ó del DOWJONES es " \^{}DJI". \\ 
 	
 	\begin{python}
 SP500 = yf.Ticker("^GSPC") #S&P 500
 Nasdaq =yf.Ticker("^NDX") #Nasdaq 100
 Nasdaqcomp = yf.Ticker("^IXIC") #Nasdaq Composite
-DWJ = yf.Ticker("^DJI") #Dow JOnes Industrial Average
+DWJ = yf.Ticker("^DJI") #Dow Jones Industrial Average
 IPC = yf.Ticker('^MXX') #IPC (BMV)
 STOXX50E = yf.Ticker('^STOXX50E') #STOXX50
 Nikkei = yf.Ticker('^N225') #Nikkei
 CSI300 = yf.Ticker('000300.SS') #CS1300	
 	\end{python}  
 	
+	La siguiente parte del código comienza guardando en listas los tickets y el nombre de los mismos, esto lo hacemos así para usarlos en los ciclos tipo \pythoninline{for}.\\
+	
+	En el primer \pythoninline{for} establecemos las fechas usando el módulo \pythoninline{datetime}. El método \pythoninline{.today()} sirve, como se podría adivinar, para devolver la fecha del día de hoy en formato datetime. Por otro lado, el método \pythoninline{.replace()} sirve para modificar los valores de los datos tipo datetime. Y, la función \pythoninline{timedelta()} se usa para restar la cantidad de tiempo que se especifique.\\
+	
+	Así lo que estamos haciendo es obtener la fecha de hoy hasta siete días antes, en un intervalo de 23 horas. Estos serán los días que obtendremos la información de los tickets. \\
+	
+	En el siguiente \pythoninline{for}, que recorre la longitud de la lista de tickets, con el método \pythoninline{.history} obtenemos el historial de los tickets con intervalos de un minuto. Luego, con la función \pythoninline{Path} del módulo \pythoninline{pathlib} creamos con una ruta de acceso para los archivos .csv de acuerdo con el nombre del ticket y la fecha a la que pertenece, para ello usamos el método \pythoninline{.format}.\\
+	
+	Por último, con el método \pythoninline{.to_csv} convertimos el historiald de los tickets en .csv, y especificamos que deseamos los encabezados y los índices, de igual modo, especificamos la ruta en la que se guardará con el "filepath" que habíamos crado anteriormente. \\ 
+	
 	\begin{python}
 tickets = [SP500, Nasdaq, Nasdaqcomp, DWJ, IPC, STOXX50E, Nikkei, CSI300]
 ticketsname = ["SP500", "Nasdaq", "Nasdaqcomp", "DWJ", "IPC", "STOXX50", "Nikkei", "CSI300"]
-
-#corregir
 
 for i in range(7):
     start = datetime.today().replace(hour = 0, minute = 0, second = 0 ) - timedelta(days= i +1)
     end = datetime.today().replace(hour = 23) - timedelta(days = i +1)
 
-        #agregar avg de open, high, low, close
-
-
     for i in range(len(tickets)):
-        historial = tickets[i].history(start=start, end=end , interval="1m") #Obtener los tickets
-        #Elegimos el path en el que se guardaran los csv, queremos que vaya a una carpeta adecuada a cada indicador
-        filepath = Path('Info/{almacenamiento}/{name}_{date}.csv'.format(almacenamiento = ticketsname[i] ,name = ticketsname[i], date = start.strftime('%Y-%m-%d')))
+        historial = tickets[i].history(start=start, end=end , interval="1m") 
+        filepath = Path('Info/{almacenamiento}/{name}_{date}.csv'
+        	.format(almacenamiento = ticketsname[i] ,name = ticketsname[i], date = start.strftime('%Y-%m-%d')))
         filepath.parent.mkdir(parents=True, exist_ok=True)
-        #guardar grafica
         historial.to_csv(filepath, header=True, index=True)	
 	\end{python}	
 	
-	Por otro lado para la automatización del script ocupé el administrador de tareas de windows. 
+	Por otro lado para la automatización del script ocupé el administrador de tareas de windows. Para ello se crea un archivo .bat con la ruta en la que está guardada el ejecutable de python y el script. 
 	
 		\subsection{Diseño de base de datos}
 		
@@ -155,7 +160,9 @@ for i in range(7):
 		
 		\subsection{Implementación y automatización de la base de datos}
 	
-	El plan original era  
+	El plan original era usar PostgresSQL como el sistema de gestión de base de datos, pero por cuestiones técnicas terminé usando MySQL. En fin, la implementación de la base de datos en SQL tiene el siguiente código, 
+	
+	
 		
 	
 	
@@ -166,11 +173,18 @@ for i in range(7):
 	
 	
 	\subsection{Análisis sobre complejidad de los índices económicos}
-	\subsubsection{Entropía aproximada}
+	
+	\subsubsection{Approximate entropy}
+	
+	El objetivo de la \textit{approximate entropy} (ApEn) es estimar la 
+	
+	\subsubsection{Sample entropy}
 		
 \section{Bibliografía}
 
 	https://algotrading101.com/learn/yfinance-guide/
+	
+	https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7515030/
 	
 
 
