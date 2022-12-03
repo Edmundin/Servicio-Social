@@ -75,9 +75,9 @@ showstringspaces=false
 	
 	\item[•] \textit{Ecuacionlogistica.py}, en donde se desarrollan distintas funciones respecto a la ecuación logística, como su graficación, calcular sus datos y almacenarlos en formato .scv.
 	
-	\item[•] Diagrama_bifurcacion.py, en donde se grafica el diagrama de bifurcación de la ecuación logística.
+	\item[•] \textit{Diagrama{\_}bifurcacion.py}, en donde se grafica el diagrama de bifurcación de la ecuación logística.
 	
-	\item[•] Data_extraction.py, en donde se extraen los datos de distintos índices económicos y se almacenan en archivos scv.
+	\item[•] \textit{Data{\_}extraction.py}, en donde se extraen los datos de distintos índices económicos y se almacenan en archivos scv.
 	
 \end{itemize}
 
@@ -210,7 +210,7 @@ Es decir, que la población alcanza un punto fijo cuando adquiere cualquiera de 
 
 \end{itemize}
 
-Ahora queremos graficar los resultados de la "ecuación logística" para miles de valores diferente de $r$ (entre 2 y 4) en un diagrama. Para cada punto, haremos 500 iteraciones. Sólo graficaremos las primeras 100, y las primeras 400 serán una oportunidad para posible convergencia. El código empleado en el script \textit{Diagramasbifurcacion.py} se ve así,
+Ahora queremos graficar los resultados de la ecuación logística para miles de valores diferente de $r$ (entre 2 y 4) en un diagrama. Para cada punto, haremos 500 iteraciones. Sólo graficaremos las primeras 100, y las primeras 400 serán una oportunidad para posible convergencia. El código empleado en el script  \textit{Diagramasbifurcacion.py} se ve así,
 
 \begin{python}
 R_list = np.linspace(2.0, 4.0, 1000)
@@ -234,15 +234,15 @@ R_select = np.array(R_select).ravel()
 
 plt.style.use('seaborn-whitegrid')
 plt.figure(figsize=(16, 6), facecolor='lightgray')
-plt.xlabel('The value of R')
-plt.ylabel('The value of x')
-plt.title(f'\nThe bifurcation diagram of the Logistic Equation\n\n2.0 < R < 4.0  |  x0=0.3\n')
+plt.xlabel('El valor de r')
+plt.ylabel('El valor de x')
+plt.title(f'\n El diagrama de bifurcacion \n\n2.0 < R < 4.0  |  x0=0.3\n')
 plt.scatter(R_select, x_select, color='red', s=0.1)
-plt.savefig('bifurcation_diagram.png')
+plt.savefig('Diagrama_bifurcacion.png')
 plt.show()
 \end{python}
 
-
+\includegraphics[scale=0.5]{Diagram_bif.png} 
 
 \section{Creación de una base de datos}
 
@@ -320,15 +320,18 @@ for i in range(7):
         historial.to_csv(filepath, header=True, index=True)	
 	\end{python}	
 	
-	Por otro lado para la automatización del script ocupé el administrador de tareas de windows. Para ello se crea un archivo .bat con la ruta en la que está guardada el ejecutable de python y el script. 
+	Por otro lado para la automatización del script ocupé el administrador de tareas de windows. Para ello se crea un archivo .bat con la ruta en la que está guardada el ejecutable de python y el script. A saber, \textit{Data{\_}extraction.bat}.
 	
 		\subsection{Diseño, implementación y automatización de la base de datos}
 	
-	El plan original era usar PostgresSQL como el sistema de gestión de base de datos, pero por cuestiones técnicas terminé usando MySQL. En fin, la implementación de la base de datos en SQL tiene el siguiente código, 
+	El plan original era usar PostgresSQL como el sistema de gestión de base de datos, pero por cuestiones técnicas terminé usando MySQL. En primer lugar, estuvo el diseño de la base de datos, cuyo diagrama de Entidad-Relación se presenta a continuación,
 	
-	
-		
-	
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.7]{Base_de_datos.PNG} 
+\end{figure}	
+
+	Como vemos está compuesto de dos tablas; Indices{\_}economicos y Datos. En el primero se almacena toda la información asociada a l
 	
 	
 \section{Análisis de distintos índices}
