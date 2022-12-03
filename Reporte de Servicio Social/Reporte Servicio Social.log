@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.11.21)  1 DEC 2022 07:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.11.21)  3 DEC 2022 13:29
 entering extended mode
 **"./Reporte Servicio Social.tex"
 (Reporte Servicio Social.tex
@@ -690,185 +690,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.78 	\item[•] Diagrama_
-                          bifurcacion.py, en donde se grafica el diagrama de...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 78.
-
-! Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.78 ...onde se grafica el diagrama de bifurcació
-                                                  n de la ecuación logística.
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 78.
-
-! Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.78 ...el diagrama de bifurcación de la ecuació
-                                                  n logística.
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 78.
-
-! Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.78 ...rama de bifurcación de la ecuación logí
-                                                  stica.
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-! Missing { inserted.
-<to be read again> 
-                   \begingroup 
-l.78 ...rama de bifurcación de la ecuación logí
-                                                  stica.
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-
-LaTeX Warning: Command \i invalid in math mode on input line 78.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.79 	
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.79 	
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.79 	
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Extra }, or forgotten \endgroup.
-\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.79 	
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.80 	\item[•] Data_
-                      extraction.py, en donde se extraen los datos de distin...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 80.
-
-! Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.80 ...donde se extraen los datos de distintos í
-                                                  ndices económicos y se al...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-! Missing { inserted.
-<to be read again> 
-                   \begingroup 
-l.80 ...donde se extraen los datos de distintos í
-                                                  ndices económicos y se al...
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-
-LaTeX Warning: Command \i invalid in math mode on input line 80.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 80.
-
-! Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.80 ...aen los datos de distintos índices econó
-                                                  micos y se almacenan en ar...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.81 	
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.81 	
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.81 	
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Extra }, or forgotten \endgroup.
-\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.81 	
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
@@ -976,6 +797,12 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 239.
 
 [6 <./Graf_5.png>]
+<Diagram_bif.png, id=152, 990.099pt x 433.62pt>
+File: Diagram_bif.png Graphic file (type png)
+<use Diagram_bif.png>
+Package pdftex.def Info: Diagram_bif.png  used on input line 245.
+(pdftex.def)             Requested size: 495.0483pt x 216.80946pt.
+
 Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
@@ -995,7 +822,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 269--270
 
  []
 
-
+[7 <./Diagram_bif.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 271--272
 
  []
@@ -1010,7 +837,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
  []
 
-[7]
+
 Underfull \hbox (badness 10000) in paragraph at lines 297--298
 
  []
@@ -1035,13 +862,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 305--306
 
  []
 
-
+[8]
 Overfull \hbox (39.85602pt too wide) in paragraph at lines 318--319
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[8] [9] (Reporte Servicio Social.aux
+<Base_de_datos.PNG, id=188, 394.47375pt x 296.60812pt>
+File: Base_de_datos.PNG Graphic file (type png)
+<use Base_de_datos.PNG>
+Package pdftex.def Info: Base_de_datos.PNG  used on input line 331.
+(pdftex.def)             Requested size: 276.12973pt x 207.62427pt.
+[9 <./Base_de_datos.PNG>] [10] (Reporte Servicio Social.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -1050,13 +882,13 @@ ed.
 (rerunfilecheck)             Checksum: 82C995747F9B6CFF6BFCF84194DCFF82;2347.
  ) 
 Here is how much of TeX's memory you used:
- 20908 strings out of 478699
- 348129 string characters out of 2846961
- 878050 words of memory out of 3000000
- 38577 multiletter control sequences out of 15000+600000
+ 20921 strings out of 478699
+ 348378 string characters out of 2846961
+ 862053 words of memory out of 3000000
+ 38586 multiletter control sequences out of 15000+600000
  413788 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,10n,73p,510b,1910s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,10n,73p,510b,1953s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\aedmu\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Users/aedmu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/aedmu/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -1074,9 +906,9 @@ sfonts/cm/cmti10.pfb><C:/Users/aedmu/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmtt10.pfb><C:/Users/aedmu/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/txfonts/t1xbtt.pfb><C:/Users/aedmu/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on "Reporte Servicio Social.pdf" (9 pages, 582638 bytes).
+Output written on "Reporte Servicio Social.pdf" (10 pages, 690900 bytes).
 PDF statistics:
- 299 PDF objects out of 1000 (max. 8388607)
- 115 named destinations out of 1000 (max. 500000)
- 114 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 307 PDF objects out of 1000 (max. 8388607)
+ 116 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
